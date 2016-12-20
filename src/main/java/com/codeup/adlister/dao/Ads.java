@@ -11,4 +11,7 @@ public interface Ads {
     // insert a new ad and return the new ad's id
     Long insert(Ad ad);
     List<Ad> allByUser(User user);
+    String getEmail(Ad ad);
+    Ad getAdById(int idToFind);
+    void deleteAd(Ad ad);
 }

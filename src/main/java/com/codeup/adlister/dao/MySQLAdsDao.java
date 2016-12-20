@@ -54,6 +54,40 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
+    public String getEmail(Ad ad) {
+        try {
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT email from users WHERE ID = " + ad.getUserId());
+            rs.next();
+            return rs.getString(1);
+            } catch (SQLException e) {
+                throw new RuntimeException("Error retrieving email address.", e);
+            }
+    }
+
+    @Override
+    public Ad getAdById(int idToFind) {
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT * FROM ads WHERE ID = " + idToFind);
+            rs.next();
+            return extractAd(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving details of ad.", e);
+        }
+    }
+
+    @Override
+    public void deleteAd(Ad ad) {
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate("DELETE FROM ads WHERE ID = " + ad.getId());
+        } catch (SQLException e) {
+            throw new RuntimeException("Error deleting this ad.", e);
+        }
+    }
+
+    @Override
     public Long insert(Ad ad) {
         try {
             String insertQuery = "INSERT INTO ads(user_id, title, description) VALUES (?, ?, ?)";
