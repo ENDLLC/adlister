@@ -16,6 +16,7 @@
         <div class="col-md-6">
             <h2>${ad.getTitle()}</h2>
             <p>${ad.getDescription()}</p>
+            <p><a href="/ads/details?id=${ad.getId()}">Details</a></p>
             <p>Contact seller at: ${AdsDao.getEmail(ad)}</p>
         </div>
     </c:forEach>
