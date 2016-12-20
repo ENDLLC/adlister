@@ -48,6 +48,11 @@ public class ListAdsDao implements Ads {
 
     }
 
+    @Override
+    public void updateAd(Ad ad, String title, String description) {
+
+    }
+
     private List<Ad> generateAds() {
         List<Ad> ads = new ArrayList<>();
         ads.add(new Ad(
