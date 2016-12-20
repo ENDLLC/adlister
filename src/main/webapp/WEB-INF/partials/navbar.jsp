@@ -14,6 +14,7 @@
         <div class="col-md-4 col-md-offset-3">
             <form action="/search" method="get">
                 <input name="search" id="search" class="searchBar form-control" type="text">
+                <input type="submit">
             </form>
         </div>
 
