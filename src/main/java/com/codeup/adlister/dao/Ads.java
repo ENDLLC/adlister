@@ -13,4 +13,5 @@ public interface Ads {
     List<Ad> allByUser(User user);
     String getEmail(Ad ad);
     Ad getAdById(int idToFind);
+    void deleteAd(Ad ad);
 }
