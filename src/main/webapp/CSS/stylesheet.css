@@ -23,3 +23,14 @@
 .footerTextPadding{
     padding-top: 3%;
 }
+
+.details{
+    border-left: solid #c2c2c2 1px;
+    border-right: solid #c2c2c2 1px;
+}
+.pushRight{
+    margin-left: 10%;
+}
+.pushLeft{
+    margin-right: 10%;
+}

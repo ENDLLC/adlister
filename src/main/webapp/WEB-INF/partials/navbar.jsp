@@ -6,7 +6,7 @@
         <!-- Logo -->
         <div class="navbar-header col-md-2">
             <a class="navbar-brand" href="/ads"><i class="fa fa-desktop fa-2x" aria-hidden="true"></i></a>
-            <a href="#">Home</a>
+            <a href="/ads">Home</a>
             <a href="#">Ads</a>
         </div>
 
