@@ -2,19 +2,14 @@ package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
 import com.codeup.adlister.models.User;
-import com.mysql.cj.jdbc.*;
 import com.mysql.cj.jdbc.Driver;
-
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.*;
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLAdsDao implements Ads {
-    private Connection connection = null;
+    private Connection connection;
 
     public MySQLAdsDao(Config config) {
         try {
@@ -31,72 +26,12 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public List<Ad> all() {
-        PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM ads");
+            PreparedStatement stmt = connection.prepareStatement("SELECT * FROM ads");
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
             throw new RuntimeException("Error retrieving all ads.", e);
-        }
-    }
-
-    @Override
-    public List<Ad> allByUser(User user) {
-        PreparedStatement stmt = null;
-        try {
-            stmt = connection.prepareStatement("SELECT * FROM ads WHERE user_id = " + user.getId());
-            ResultSet rs = stmt.executeQuery();
-            return createAdsFromResults(rs);
-        } catch (SQLException e) {
-            throw new RuntimeException("Error retrieving user ads.", e);
-        }
-    }
-
-    @Override
-    public String getEmail(Ad ad) {
-        try {
-            Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT email from users WHERE ID = " + ad.getUserId());
-            rs.next();
-            return rs.getString(1);
-            } catch (SQLException e) {
-                throw new RuntimeException("Error retrieving email address.", e);
-            }
-    }
-
-    @Override
-    public Ad getAdById(int idToFind) {
-        try {
-            Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("SELECT * FROM ads WHERE ID = " + idToFind);
-            rs.next();
-            return extractAd(rs);
-        } catch (SQLException e) {
-            throw new RuntimeException("Error retrieving details of ad.", e);
-        }
-    }
-
-    @Override
-    public void deleteAd(Ad ad) {
-        try {
-            Statement statement = connection.createStatement();
-            statement.executeUpdate("DELETE FROM ads WHERE ID = " + ad.getId());
-        } catch (SQLException e) {
-            throw new RuntimeException("Error deleting this ad.", e);
-        }
-    }
-
-    @Override
-    public void updateAd(Ad ad, String title, String description) {
-        try {
-            String updateQuery = "UPDATE ads SET title = ?, description = ? WHERE id = " + ad.getId();
-            PreparedStatement stmt = connection.prepareStatement(updateQuery);
-            stmt.setString(1, title);
-            stmt.setString(2, description);
-            stmt.execute();
-        } catch (SQLException e) {
-            throw new RuntimeException("Error updating ad.", e);
         }
     }
 
@@ -115,6 +50,45 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
+    public List<Ad> allByUser(User user) {
+        try {
+            PreparedStatement stmt = connection.prepareStatement("SELECT * FROM ads WHERE user_id = " + user.getId());
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving user ads.", e);
+        }
+    }
+
+    private List<Ad> createAdsFromResults(ResultSet rs) throws SQLException {
+        List<Ad> ads = new ArrayList<>();
+        while (rs.next()) {
+            ads.add(extractAd(rs));
+        }
+        return ads;
+    }
+
+    private Ad extractAd(ResultSet rs) throws SQLException {
+        return new Ad(
+            rs.getLong("id"),
+            rs.getLong("user_id"),
+            rs.getString("title"),
+            rs.getString("description")
+        );
+    }
+
+    @Override
+    public Ad getAdById(int idToFind) {
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT * FROM ads WHERE ID = " + idToFind);
+            rs.next();
+            return extractAd(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving details of ad.", e);
+        }
+    }
+    @Override
     public Long insert(Ad ad) {
         try {
             String insertQuery = "INSERT INTO ads(user_id, title, description) VALUES (?, ?, ?)";
@@ -130,21 +104,38 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error creating a new ad.", e);
         }
     }
-
-    private Ad extractAd(ResultSet rs) throws SQLException {
-        return new Ad(
-            rs.getLong("id"),
-            rs.getLong("user_id"),
-            rs.getString("title"),
-            rs.getString("description")
-        );
+    @Override
+    public void updateAd(Ad ad) {
+        try {
+            String updateQuery = "UPDATE ads SET title = ?, description = ? WHERE id = " + ad.getId();
+            PreparedStatement stmt = connection.prepareStatement(updateQuery);
+            stmt.setString(1, ad.getTitle());
+            stmt.setString(2, ad.getDescription());
+            stmt.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error updating ad.", e);
+        }
     }
 
-    private List<Ad> createAdsFromResults(ResultSet rs) throws SQLException {
-        List<Ad> ads = new ArrayList<>();
-        while (rs.next()) {
-            ads.add(extractAd(rs));
+    @Override
+    public void deleteAd(Ad ad) {
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate("DELETE FROM ads WHERE ID = " + ad.getId());
+        } catch (SQLException e) {
+            throw new RuntimeException("Error deleting this ad.", e);
         }
-        return ads;
+    }
+
+    @Override
+    public String getEmail(Ad ad) {
+        try {
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT email from users WHERE ID = " + ad.getUserId());
+            rs.next();
+            return rs.getString(1);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving email address.", e);
+        }
     }
 }
