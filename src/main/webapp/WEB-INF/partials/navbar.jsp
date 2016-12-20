@@ -12,7 +12,9 @@
 
         <!-- Search Bar-->
         <div class="col-md-4 col-md-offset-3">
-            <input class="searchBar form-control" type="text">
+            <form action="/search" method="get">
+                <input name="search" id="search" class="searchBar form-control" type="text">
+            </form>
         </div>
 
         <!-- Search icon -->
