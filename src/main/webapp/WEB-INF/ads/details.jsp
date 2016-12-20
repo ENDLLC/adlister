@@ -10,5 +10,9 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <h2>${sessionScope.ad.getTitle()}</h2>
 <p>${sessionScope.ad.getDescription()}</p>
+<c:if test="${sessionScope.user.getId() == sessionScope.ad.getUserId()}">
+    <p><a href="/edit">Edit ad</a></p>
+    <p><a href="/delete">Delete ad</a></p>
+</c:if>
 </body>
 </html>
