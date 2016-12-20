@@ -10,21 +10,21 @@
         <div class="container">
             <div class="col-md-6 col-md-offset-3">
                 <div class="col-md-12 container-fluid">
-                    <form action="" class="form-horizontal">
+                    <form action="/login" method="POST" class="form-horizontal">
                         <legend class="text-center">Sign In</legend>
                         <div class="form-group">
                             <div class="col-lg-10 col-md-offset-1">
-                                <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Email">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-lg-10 col-md-offset-1">
-                                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                             </div>
                         </div>
                         <div class="form-group col-md-12">
                             <div class="col-md-2 col-md-offset-5">
-                                <a href="#" class="btn btn-primary">Sign-in</a>
+                                <input type="submit" class="btn btn-primary" value="Sign-in">
                             </div>
                         </div>
 
@@ -33,7 +33,7 @@
                             <p class="col-md-4 col-md-offset-2">Need an account?</p>
                             <div class="form-group col-md-6">
                                 <div class="col-lg-10 col-lg-offset-0">
-                                    <a href="#" class="btn btn-info">Sign-up</a>
+                                    <a href="/register" class="btn btn-info">Sign-up</a>
                                 </div>
                             </div>
                         </div>
