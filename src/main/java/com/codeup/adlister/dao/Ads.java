@@ -12,4 +12,5 @@ public interface Ads {
     Long insert(Ad ad);
     List<Ad> allByUser(User user);
     String getEmail(Ad ad);
+    Ad getAdById(int idToFind);
 }

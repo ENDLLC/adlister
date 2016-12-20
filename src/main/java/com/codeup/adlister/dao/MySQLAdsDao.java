@@ -61,8 +61,20 @@ public class MySQLAdsDao implements Ads {
             rs.next();
             return rs.getString(1);
             } catch (SQLException e) {
-                throw new RuntimeException("Error retrieving email address.");
+                throw new RuntimeException("Error retrieving email address.", e);
             }
+    }
+
+    @Override
+    public Ad getAdById(int idToFind) {
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT * FROM ads WHERE ID = " + idToFind);
+            rs.next();
+            return extractAd(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving details of ad.", e);
+        }
     }
 
     @Override
