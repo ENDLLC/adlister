@@ -12,6 +12,8 @@
                     <li><a href="/login">Login</a></li>
                 </c:when>
                 <c:otherwise>
+                    <li><a href="/userEdit">Edit your account</a></li>
+                    <li><a href="/userDelete">Delete your account</a></li>
                     <li><a href="/ads/create">Post ad</a></li>
                     <li><a href="/logout">Logout</a></li>
                 </c:otherwise>
