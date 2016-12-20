@@ -3,13 +3,16 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Welcome to my site!" />
+        <jsp:param name="title" value="ENDlister" />
     </jsp:include>
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-    <div class="container">
-        <h1>Welcome to the Adlister!</h1>
+    <div class="jumbotron text-center">
+        <h1>Welcome To TECHIElister!</h1>
+        <p>A techie's dream to sell, buy, and trade all things Techie!</p>
+        <p><a class="btn btn-primary btn-lg">Learn more</a></p>
     </div>
+
 </body>
 </html>

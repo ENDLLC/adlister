@@ -2,7 +2,7 @@
 <html>
     <head>
         <jsp:include page="/WEB-INF/partials/head.jsp">
-            <jsp:param name="title" value="Please Log In" />
+            <jsp:param name="title" value="ENDlister-Log in" />
         </jsp:include>
     </head>
     <body>
@@ -24,7 +24,7 @@
                         </div>
                         <div class="form-group col-md-12">
                             <div class="col-md-2 col-md-offset-5">
-                                <input type="submit" class="btn btn-primary" value="Sign-in">
+                                <input type="submit" class="btn btn-primary" value="Sign in">
                             </div>
                         </div>
 
@@ -33,7 +33,7 @@
                             <p class="col-md-4 col-md-offset-2">Need an account?</p>
                             <div class="form-group col-md-6">
                                 <div class="col-lg-10 col-lg-offset-0">
-                                    <a href="/register" class="btn btn-info">Sign-up</a>
+                                    <a href="/register" class="btn btn-info">Create account</a>
                                 </div>
                             </div>
                         </div>
