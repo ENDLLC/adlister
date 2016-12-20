@@ -12,7 +12,7 @@
 <p>${sessionScope.ad.getDescription()}</p>
 <c:if test="${sessionScope.user.getId() == sessionScope.ad.getUserId()}">
     <p><a href="/edit">Edit ad</a></p>
-    <p><a href="/delete">Delete ad</a></p>
+    <p><a href="/delete?id=${ad.getId()}">Delete ad</a></p>
 </c:if>
 </body>
 </html>

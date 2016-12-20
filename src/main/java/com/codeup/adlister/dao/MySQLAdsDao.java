@@ -82,7 +82,6 @@ public class MySQLAdsDao implements Ads {
         try {
             Statement statement = connection.createStatement();
             statement.executeUpdate("DELETE FROM ads WHERE ID = " + ad.getId());
-            System.out.println(statement);
         } catch (SQLException e) {
             throw new RuntimeException("Error deleting this ad.", e);
         }
