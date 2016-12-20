@@ -8,6 +8,7 @@
         <ul class="nav navbar-nav navbar-right">
             <c:choose>
                 <c:when test="${sessionScope.user == null}">
+                    <li><a href="/register">Create Account</a></li>
                     <li><a href="/login">Login</a></li>
                 </c:when>
                 <c:otherwise>
