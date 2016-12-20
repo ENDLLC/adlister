@@ -2,7 +2,6 @@ package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
-
 import java.sql.*;
 
 public class MySQLUsersDao implements Users {
@@ -21,7 +20,6 @@ public class MySQLUsersDao implements Users {
         }
     }
 
-
     @Override
     public User findByUsername(String username) {
         String query = "SELECT * FROM users WHERE username = ? LIMIT 1";
@@ -32,6 +30,18 @@ public class MySQLUsersDao implements Users {
         } catch (SQLException e) {
             throw new RuntimeException("Error finding a user by username", e);
         }
+    }
+
+    private User extractUser(ResultSet rs) throws SQLException {
+        if (! rs.next()) {
+            return null;
+        }
+        return new User(
+                rs.getLong("id"),
+                rs.getString("username"),
+                rs.getString("email"),
+                rs.getString("password")
+        );
     }
 
     @Override
@@ -75,17 +85,4 @@ public class MySQLUsersDao implements Users {
             throw new RuntimeException("Error deleting your account.", e);
         }
     }
-
-    private User extractUser(ResultSet rs) throws SQLException {
-        if (! rs.next()) {
-            return null;
-        }
-        return new User(
-            rs.getLong("id"),
-            rs.getString("username"),
-            rs.getString("email"),
-            rs.getString("password")
-        );
-    }
-
 }
