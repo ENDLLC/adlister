@@ -14,7 +14,7 @@
                         <legend class="text-center">Sign In</legend>
                         <div class="form-group">
                             <div class="col-lg-10 col-md-offset-1">
-                                <input type="text" class="form-control" id="username" name="username" placeholder="Email">
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Username">
                             </div>
                         </div>
                         <div class="form-group">
