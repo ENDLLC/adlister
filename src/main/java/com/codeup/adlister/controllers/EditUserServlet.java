@@ -25,14 +25,13 @@ public class EditUserServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("confirm_password");
-
         // validate input
         boolean inputHasErrors = username.isEmpty()
                 || email.isEmpty()
                 || password.isEmpty()
                 || (! password.equals(passwordConfirmation))
-                || (DaoFactory.getUsersDao().findByUsername(username) != null);
-
+                || ((DaoFactory.getUsersDao().findByUsername(username) != null)
+                    && (DaoFactory.getUsersDao().findByUsername(username).getId() != user.getId()));
         if (inputHasErrors) {
             response.sendRedirect("/profile");
             return;
