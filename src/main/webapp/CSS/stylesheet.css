@@ -34,3 +34,12 @@
 .pushLeft{
     margin-right: 10%;
 }
+
+.logo {
+    position: relative;
+    top: -10px;
+}
+
+.pushDown{
+    margin-top: 5%;
+}
