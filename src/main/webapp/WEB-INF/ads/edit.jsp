@@ -11,6 +11,7 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Edit Ad" />
     </jsp:include>
+    <jsp:include page="../partials/navbar.jsp" />
 </head>
 <body>
 <div class="container">
@@ -28,5 +29,7 @@
         <input type="submit" class="btn btn-block btn-primary">
     </form>
 </div>
+<jsp:include page="../partials/footer.jsp"/>
+<jsp:include page="../partials/javascript.jsp"/>
 </body>
 </html>

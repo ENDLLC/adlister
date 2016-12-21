@@ -5,10 +5,10 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Your Profile" />
     </jsp:include>
-</head>
-<body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
+</head>
+<body>
     <!-- Title -->
     <div class="container">
         <h1 class="title text-center">Welcome!</h1>
@@ -46,7 +46,7 @@
             <h2 class="underscore text-right">${sessionScope.user.username}</h2>
 
 
-            <div class="col-md-12 box">
+            <div class="col-md-12 box floatRight">
                 <h6>Profile Picture ??</h6>
             </div>
             <div class="col-md-12">
@@ -54,7 +54,7 @@
             </div>
         </div>
     </div>
-
     <jsp:include page="/WEB-INF/partials/footer.jsp" />
+    <jsp:include page="partials/javascript.jsp"/>
 </body>
 </html>

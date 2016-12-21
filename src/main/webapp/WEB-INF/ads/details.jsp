@@ -5,10 +5,9 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Ad details" />
     </jsp:include>
+    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp" />
-
 <div class="col-md-10 col-md-offset-1 details">
     <div class="col-md-6 pushRight">
         <h3>${sessionScope.ad.getTitle()}</h3>
@@ -24,6 +23,7 @@
     </div>
 
 </div>
-<jsp:include page="/WEB-INF/partials/footer.jsp" />
+<jsp:include page="../partials/footer.jsp"/>
+<jsp:include page="../partials/javascript.jsp"/>
 </body>
 </html>

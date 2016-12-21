@@ -11,9 +11,9 @@
     <jsp:include page="partials/head.jsp">
         <jsp:param name="title" value="Update your account!" />
     </jsp:include>
+    <jsp:include page="partials/navbar.jsp" />
 </head>
 <body>
-<jsp:include page="partials/navbar.jsp" />
 <div class="container">
     <h1>Please update your information.</h1>
     <form action="/userEdit" method="post">
@@ -36,5 +36,7 @@
         <input type="submit" class="btn btn-primary btn-block">
     </form>
 </div>
+<jsp:include page="partials/footer.jsp"/>
+<jsp:include page="partials/javascript.jsp"/>
 </body>
 </html>

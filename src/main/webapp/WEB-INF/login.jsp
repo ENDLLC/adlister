@@ -4,9 +4,9 @@
         <jsp:include page="/WEB-INF/partials/head.jsp">
             <jsp:param name="title" value="Please Log In" />
         </jsp:include>
+        <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     </head>
     <body>
-        <jsp:include page="/WEB-INF/partials/navbar.jsp" />
         <div class="container">
             <div class="col-md-6 col-md-offset-3">
                 <div class="col-md-12 container-fluid">
@@ -41,5 +41,7 @@
                 </div>
             </div>
         </div>
+        <jsp:include page="partials/footer.jsp"/>
+        <jsp:include page="partials/javascript.jsp"/>
     </body>
 </html>
