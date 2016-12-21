@@ -36,11 +36,11 @@
             <h2 class="underscore text-right text-center">${sessionScope.user.username}</h2>
 
 
-            <div class="col-md-12 box floatRight">
+            <div class="col-md-4 col-md-offset-1 box">
                 <h6>Profile Picture ??</h6>
             </div>
-            <div class="col-md-12">
-                <a href="/userEdit" class="btn btn-success floatRight">Settings</a>
+            <div class="col-md-1 col-md-offset-2 pushDown">
+                <a href="/userEdit" class="btn btn-success">Settings</a>
             </div>
         </div>
     </div>

@@ -16,7 +16,7 @@
 <body>
 <h3 class="text-center">Settings</h3>
 <div class="col-md-4 col-md-offset-4">
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs settingsTab">
         <li class="active"><a href="#generalTab" data-toggle="tab" aria-expanded="false">General</a></li>
         <li class=""><a href="#passwordTab" data-toggle="tab" aria-expanded="true">Password</a></li>
         <li class=""><a href="#userDeleteTab" data-toggle="tab" aria-expanded="true">Delete Account</a></li>
