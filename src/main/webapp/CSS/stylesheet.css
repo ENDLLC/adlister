@@ -54,6 +54,22 @@
     -webkit-justify-content: center;
     justify-content: center;
 }
+.fa-arrow-circle-o-left{
+    color: #40a33f;
+}
+
+.adDisplay{
+    border: solid #dfdfdf 1px;
+    margin-right: 3%;
+    margin-bottom: 3%;
+
+}
+
+.userDeleteButton{
+    margin-top: 10%;
+    margin-left: 32%;
+}
+
 
 #myCarousel{
     margin-top: 0;
@@ -77,3 +93,6 @@
     background-image: none
 }
 
+.settingsTab {
+    margin-left: 15%;
+}
