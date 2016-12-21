@@ -29,7 +29,7 @@
                             </div>
                         </div>
                         <div class="form-group col-md-12 pushDown">
-                            <p class="row col-md-3 col-md-offset-4">Need an account?</p>
+                            <p class="row col-md-4 col-md-offset-3">Need an account?</p>
                             <div class="form-group col-md-4">
                                 <div class="col-md-10">
                                     <a href="/register" class="btn btn-info">Sign-up</a>

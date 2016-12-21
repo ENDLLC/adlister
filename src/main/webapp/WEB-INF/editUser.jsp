@@ -15,7 +15,6 @@
 </head>
 <body>
 <h3 class="text-center">Settings</h3>
-
 <div class="col-md-4 col-md-offset-4">
     <ul class="nav nav-tabs">
         <li class="active"><a href="#usernameTab" data-toggle="tab" aria-expanded="false">Username</a></li>
@@ -23,20 +22,43 @@
         <li class=""><a href="#emailTab" data-toggle="tab" aria-expanded="true">Email</a></li>
         <li class=""><a href="#userDeleteTab" data-toggle="tab" aria-expanded="true">Delete Account</a></li>
     </ul>
-    <div id="myTabContent" class="tab-content">
-        <div class="tab-pane fade active in" id="usernameTab">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input id="username" name="username" class="form-control" type="text" value="${user.getUsername()}">
+
+    <form action="/userEdit" method="post">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="usernameTab">
+                <div class="form-group pushDown">
+                    <label for="username">Username</label>
+                    <input id="username" name="username" class="form-control" type="text" value="${user.getUsername()}">
+                </div>
+                <input type="submit" class="btn btn-primary" value="Update Username">
+            </div>
+            <div class="tab-pane fade pushDown" id="passwordTab">
+                <div class="form-group">
+                    <label for="password">New Password</label>
+                    <input id="password" name="password" class="form-control" type="password">
+                </div>
+                <div class="form-group pushDown">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input id="confirm_password" name="confirm_password" class="form-control" type="password">
+                </div>
+                <input type="submit" class="btn btn-primary" value="Update Password">
+            </div>
+            <div class="tab-pane fade pushDown" id="emailTab">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" class="form-control" type="text" value="${user.getEmail()}">
+                </div>
+                <input type="submit" class="btn btn-primary" value="Update Email">
+            </div>
+            <div class="tab-pane fade" id="userDeleteTab">
+                <div class="userDeleteButton">
+                    <a href="/userDelete" class="btn btn-danger">Delete Account</a>
+                </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="userDeleteTab">
-            <div class="userDeleteButton">
-                <a href="/userDelete" class="btn btn-danger">Delete Account</a>
-            </div>
-        </div>
-    </div>
+    </form>
 </div>
+
 
 
 <%--<div class="container col-md-10 col-md-offset-1">

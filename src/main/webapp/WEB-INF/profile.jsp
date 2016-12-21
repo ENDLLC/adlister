@@ -17,18 +17,7 @@
     <div class="col-md-10 col-md-offset-1 container-fluid">
         <!-- Ads Display -->
         <div class="col-md-6 container-fluid">
-
-            <!-- Favorite ads-->
-            <h2 class="col-md-12 title underscore">Favorite Ads</h2>
-            <c:forEach var="ad" items="${ads}">
-                <div class="col-md-6">
-                    <h4>${ad.title}</h4>
-                    <p>${ad.description}</p>
-                    <p><a href="/ads/details?id=${ad.getId()}">Details</a></p>
-                </div>
-            </c:forEach>
-
-
+            
             <!--My ads-->
             <h2 class="row col-md-12 title underscore">My Ads</h2>
             <c:forEach var="ad" items="${ads}">
