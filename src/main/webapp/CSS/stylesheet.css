@@ -54,3 +54,26 @@
     -webkit-justify-content: center;
     justify-content: center;
 }
+
+#myCarousel{
+    margin-top: 0;
+    margin-left: 10em;
+    margin-right: 10em;
+    background-color: white;
+}
+.carousel-inner{
+    background-color: white;
+    text-shadow: black;
+}
+.carousel-inner > .item > img{
+    margin: 0 auto;
+
+}
+.carousel-control{
+    color: ghostwhite;
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none
+}
+
