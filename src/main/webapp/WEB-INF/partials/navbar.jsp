@@ -9,12 +9,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand logo" href="/index.jsp"><i class="fa fa-desktop fa-2x" aria-hidden="true"></i></a>
+            <a class="navbar-brand logo" href="/"><i class="fa fa-desktop fa-2x" aria-hidden="true"></i></a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="/index.jsp">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="/ads">Ads</a></li>
             </ul>
 
