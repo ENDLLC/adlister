@@ -9,17 +9,19 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
-<div class="container">
-    <h1>Here Are all the ads!</h1>
+<div class="container col-md-10 col-md-offset-1">
+    <h1 class="text-center">Ads</h1>
 
+    <div class="col-md-12 container-fluid">
     <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <h2>${ad.getTitle()}</h2>
+            <div class="box col-md-2">
+            <h4>${ad.getTitle()}</h4>
             <p>${ad.getDescription()}</p>
             <p><a href="/ads/details?id=${ad.getId()}">Details</a></p>
             <p>Contact seller at: ${AdsDao.getEmail(ad)}</p>
-        </div>
+            </div>
     </c:forEach>
+    </div>
 </div>
 
 </body>

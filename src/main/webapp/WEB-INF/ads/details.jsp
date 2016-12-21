@@ -6,7 +6,7 @@
         <jsp:param name="title" value="Ad details" />
     </jsp:include>
 </head>
-<body>=
+<body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 <div class="col-md-10 col-md-offset-1 details">

@@ -6,9 +6,9 @@
     border: black 1px solid;
     height:200px;
     width: 200px;
-    float: right;
     margin-bottom: 5%;
     margin-top: 2%;
+    margin-right: 5%;
 }
 
 .floatRight {
