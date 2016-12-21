@@ -11,7 +11,7 @@
 <body>
     <!-- Title -->
     <div class="container">
-        <h1 class="title text-center">Welcome!</h1>
+        <h1 class="title text-center" id="greeting"></h1>
     </div>
 
     <div class="col-md-10 col-md-offset-1 container-fluid">
