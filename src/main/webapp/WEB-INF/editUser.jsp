@@ -16,7 +16,7 @@
 <body>
 <div class="container col-md-10 col-md-offset-1">
     <div class="col-md-6">
-        <h1>Please update your information.</h1>
+        <h1>Update Information</h1>
         <form action="/userEdit" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
@@ -38,8 +38,10 @@
         </form>
     </div>
     <div class="col-md-6">
-        <h1>Other Settings</h1>
-        <input type="submit" class="btn btn-danger" href="/userDelete" value="Delete Account">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>Other Settings</h3>
+            <a href="/userDelete" class="btn btn-danger">Delete Account</a>
+        </div>
     </div>
 
 </div>
