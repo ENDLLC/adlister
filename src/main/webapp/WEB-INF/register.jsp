@@ -7,31 +7,46 @@
     <jsp:include page="partials/navbar.jsp" />
 </head>
 <body>
-    <div class="container col-md-6 col-md-offset-3">
-        <h1 class="title text-center">Register</h1>
-        <form action="/register" method="post">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input id="username" name="username" class="form-control" type="text">
+<form action="/register" method="post" class="form-horizontal col-md-6 col-md-offset-3">
+    <fieldset>
+        <legend class="text-center">Register</legend>
+        <div class="form-group">
+            <label for="username" class="col-lg-2 control-label">Username</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="username" name="username" placeholder="Username">
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input id="email" name="email" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-lg-2 control-label">Email</label>
+            <div class="col-lg-10">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Password">
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input id="password" name="password" class="form-control" type="password">
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-lg-2 control-label">Password</label>
+            <div class="col-lg-10">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
             </div>
-            <div class="form-group">
-                <label for="confirm_password">Confirm Password</label>
-                <input id="confirm_password" name="confirm_password" class="form-control" type="password">
+        </div>
+        <div class="form-group">
+            <label for="confirm_password" class="col-lg-2 control-label">Confirm Password</label>
+            <div class="col-lg-10">
+                <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm Password">
             </div>
-            <div class="col-md-4 col-md-offset-4">
-            <input type="submit" class="btn btn-primary btn-block">
+        </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
-        </form>
-    </div>
+        </div>
+    </fieldset>
+</form>
     <jsp:include page="partials/footer.jsp"/>
     <jsp:include page="partials/javascript.jsp"/>
 </body>
 </html>
+
+
+
+
