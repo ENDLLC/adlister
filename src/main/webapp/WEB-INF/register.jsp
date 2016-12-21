@@ -4,9 +4,9 @@
     <jsp:include page="partials/head.jsp">
         <jsp:param name="title" value="Register For Our Site!" />
     </jsp:include>
+    <jsp:include page="partials/navbar.jsp" />
 </head>
 <body>
-    <jsp:include page="partials/navbar.jsp" />
     <div class="container col-md-6 col-md-offset-3">
         <h1 class="title text-center">Register</h1>
         <form action="/register" method="post">
@@ -31,5 +31,7 @@
             </div>
         </form>
     </div>
+    <jsp:include page="partials/footer.jsp"/>
+    <jsp:include page="partials/javascript.jsp"/>
 </body>
 </html>

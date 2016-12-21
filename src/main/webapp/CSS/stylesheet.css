@@ -6,9 +6,9 @@
     border: black 1px solid;
     height:200px;
     width: 200px;
-    float: right;
     margin-bottom: 5%;
     margin-top: 2%;
+    margin-right: 5%;
 }
 
 .floatRight {
@@ -24,13 +24,22 @@
     padding-top: 3%;
 }
 
-.flexcontainer {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    justify-content: center;
+.details{
+    border-left: solid #c2c2c2 1px;
+    border-right: solid #c2c2c2 1px;
+}
+.pushRight{
+    margin-left: 10%;
+}
+.pushLeft{
+    margin-right: 10%;
+}
+
+.logo {
+    position: relative;
+    top: -10px;
+}
+
+.pushDown{
+    margin-top: 5%;
 }

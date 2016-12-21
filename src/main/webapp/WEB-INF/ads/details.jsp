@@ -5,14 +5,25 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Ad details" />
     </jsp:include>
+    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp" />
-<h2>${sessionScope.ad.getTitle()}</h2>
-<p>${sessionScope.ad.getDescription()}</p>
-<c:if test="${sessionScope.user.getId() == sessionScope.ad.getUserId()}">
-    <p><a href="/ads/edit?id=${ad.getId()}">Edit ad</a></p>
-    <p><a href="/delete?id=${ad.getId()}">Delete ad</a></p>
-</c:if>
+<div class="col-md-10 col-md-offset-1 details">
+    <div class="col-md-6 pushRight">
+        <h3>${sessionScope.ad.getTitle()}</h3>
+        <p>${sessionScope.ad.getDescription()}</p>
+        <c:if test="${sessionScope.user.getId() == sessionScope.ad.getUserId()}">
+            <a href="/ads/edit?id=${ad.getId()}" class="btn btn-primary">Edit ad</a>
+            <a href="/delete?id=${ad.getId()}" class="btn btn-danger">Delete ad</a>
+        </c:if>
+    </div>
+
+    <div class="box col-md-6 pushLeft">
+        <h5>Picture of Ad</h5>
+    </div>
+
+</div>
+<jsp:include page="../partials/footer.jsp"/>
+<jsp:include page="../partials/javascript.jsp"/>
 </body>
 </html>
