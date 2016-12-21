@@ -13,6 +13,12 @@
         <p>A techie's dream to sell, buy, and trade all things Techie!</p>
         <p><a class="btn btn-primary btn-lg">Learn more</a></p>
     </div>
-
+    <div class="flex-container">
+        <div class="photo text-center">
+            <img class="pic" src="img/edwintheduck1.jpeg"/>
+            <img class="pic" src="img/starwarswatch.jpeg"/>
+            <img class="pic" src="img/VR.jpeg"/>
+        </div>
+    </div>
 </body>
 </html>
