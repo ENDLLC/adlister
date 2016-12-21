@@ -7,9 +7,9 @@
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 </head>
 <body>
+    <h2 class="text-center">Create a new ad</h2>
     <div class="container col-md-10 col-md-offset-1">
-        <div class="col-md-6">
-            <h1 class="text-center">Create a new Ad</h1>
+        <div class="col-md-6 col-md-offset-3">
             <form action="/ads/create" method="post">
                 <div class="form-group">
                     <label for="title">Title</label>
@@ -19,15 +19,10 @@
                     <label for="description">Description</label>
                     <textarea id="description" name="description" class="form-control" type="text"></textarea>
                 </div>
-                <a type="submit" class="btn btn-primary">Submit</a>
+                <a class="btn btn-info">Import image</a>
+                <input type="submit" class="btn btn-primary center-block pushDown">
             </form>
         </div>
-        <div class="col-md-offset-6">
-            <div class="box col-md-4  col-md-offset-4 pushDown">
-                <h4>Picture of Ad</h4>
-            </div>
-        </div>
-
     </div>
     <jsp:include page="../partials/footer.jsp"/>
     <jsp:include page="../partials/javascript.jsp"/>

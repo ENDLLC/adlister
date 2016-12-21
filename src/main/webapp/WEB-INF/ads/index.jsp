@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -11,17 +12,15 @@
 <body>
 <div class="container col-md-10 col-md-offset-1">
     <h1 class="text-center">Ads</h1>
-
-    <div class="col-md-12 container-fluid">
     <c:forEach var="ad" items="${ads}">
-            <div class="box col-md-2">
+        <c:set var="shortDesc" value="${fn:substring(ad.description,0 ,10)}"/>
+        <div class="col-md-2 container-fluid adDisplay">
             <h4>${ad.getTitle()}</h4>
-            <p>${ad.getDescription()}</p>
+            <p>${shortDesc}...</p>
             <p><a href="/ads/details?id=${ad.getId()}">Details</a></p>
             <p>Contact seller at: ${AdsDao.getEmail(ad)}</p>
-            </div>
+        </div>
     </c:forEach>
-    </div>
 </div>
 <jsp:include page="../partials/footer.jsp"/>
 <jsp:include page="../partials/javascript.jsp"/>
