@@ -21,10 +21,11 @@
             <!--My ads-->
             <h2 class="row col-md-12 title underscore text-center">My Ads</h2>
             <c:forEach var="ad" items="${ads}">
-                <c:set var="shortDesc" value="${fn:substring(ad.description,0 ,10)}"/>
+                <%-- <c:set var="shortDesc" value="${fn:substring(ad.description,0 ,10)}"/> --%>
+                <%--<c:set var="shortTitle" value="${fn:substring(ad.title,0 , 5)}"/> --%>
                 <div class="col-md-3 adDisplay">
-                    <h4>${ad.title}</h4>
-                    <p>${shortDesc}...</p>
+                    <h4> <c:out value="${fn:substring(ad.title,0 , 5)}"/>...</h4>
+                    <p> <c:out value="${fn:substring(ad.description,0 ,10)}"/>...</p>
                     <p><a href="/ads/details?id=${ad.getId()}">Details</a></p>
                 </div>
             </c:forEach>
@@ -33,7 +34,7 @@
 
         <!-- Profile Details-->
         <div class="col-md-6 container-fluid">
-            <h2 class="underscore text-right text-center">${sessionScope.user.username}</h2>
+            <h2 class="underscore text-right text-center"> <c:out value="${sessionScope.user.username}"/> </h2>
 
 
             <div class="col-md-4 col-md-offset-1 box">
