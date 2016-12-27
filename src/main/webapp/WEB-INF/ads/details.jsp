@@ -15,6 +15,12 @@
         <div class="col-md-6">
             <h3>${sessionScope.ad.getTitle()}</h3>
             <p>${sessionScope.ad.getDescription()}</p>
+            <p>Categories: <br>
+                <c:forEach var="category"
+                                      items="${sessionScope.categories.getAdCategories(sessionScope.ad)}">
+                    <a href="/category?category=${category}">${category}</a><br>
+                </c:forEach>
+            </p>
         </div>
         <div class="box col-md-6 pushLeft">
             <h5>Picture of Ad</h5>
