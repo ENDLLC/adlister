@@ -10,16 +10,16 @@ import java.util.List;
 /**
  * Created by Duke on 12/26/16.
  */
-public class MySQLCategoriesDao implements Categories{
+public class MySQLCategoriesDao implements Categories {
     private Connection connection;
 
     public MySQLCategoriesDao(Config config) {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
-                config.getUrl(),
-                config.getUser(),
-                config.getPassword()
+                    config.getUrl(),
+                    config.getUser(),
+                    config.getPassword()
             );
         } catch (SQLException e) {
             throw new RuntimeException("Error connecting to the databases.", e);
@@ -67,8 +67,8 @@ public class MySQLCategoriesDao implements Categories{
             String linkQuery = "INSERT INTO ads_categories(ad_id, category_id) " +
                     "VALUES (" + id + ", ?)";
             PreparedStatement stmt = connection.prepareStatement(linkQuery);
-            for (String category: categories
-                 ) {
+            for (String category : categories
+                    ) {
                 stmt.setString(1, String.valueOf(getCategoryId(category)));
                 stmt.execute();
             }
@@ -80,7 +80,7 @@ public class MySQLCategoriesDao implements Categories{
     private int getCategoryId(String categoryToGet) {
         try {
             PreparedStatement stmt = connection.prepareStatement("SELECT id FROM categories " +
-                    "WHERE category = '" + categoryToGet +"'");
+                    "WHERE category = '" + categoryToGet + "'");
             ResultSet rs = stmt.executeQuery();
             rs.next();
             return rs.getInt("id");
