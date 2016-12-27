@@ -10,4 +10,5 @@ import java.util.List;
 public interface Categories {
     List<String> all();
     List<String> getAdCategories(Ad ad);
+    void linkCategories(long id, String[] categories);
 }

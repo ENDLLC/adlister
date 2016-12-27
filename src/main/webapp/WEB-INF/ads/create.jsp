@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,6 +19,12 @@
                 <div class="form-group">
                     <label for="description">Description</label>
                     <textarea id="description" name="description" class="form-control" type="text"></textarea>
+                </div>
+                <div class="form-group">
+                    <c:forEach var="category" items="${sessionScope.categories}">
+                        <label for="${category}">${category}</label>
+                        <input type="checkbox" name="category[]" id="${category}" value="${category}">
+                    </c:forEach>
                 </div>
                 <a class="btn btn-info">Import image</a>
                 <input type="submit" class="btn btn-primary center-block pushDown">

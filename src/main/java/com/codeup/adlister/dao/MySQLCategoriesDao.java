@@ -60,4 +60,32 @@ public class MySQLCategoriesDao implements Categories{
             throw new RuntimeException("Error retrieving categories from ad", e);
         }
     }
+
+    @Override
+    public void linkCategories(long id, String[] categories) {
+        try {
+            String linkQuery = "INSERT INTO ads_categories(ad_id, category_id) " +
+                    "VALUES (" + id + ", ?)";
+            PreparedStatement stmt = connection.prepareStatement(linkQuery);
+            for (String category: categories
+                 ) {
+                stmt.setString(1, String.valueOf(getCategoryId(category)));
+                stmt.execute();
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Error attaching categories in database", e);
+        }
+    }
+
+    private int getCategoryId(String categoryToGet) {
+        try {
+            PreparedStatement stmt = connection.prepareStatement("SELECT id FROM categories " +
+                    "WHERE category = '" + categoryToGet +"'");
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            return rs.getInt("id");
+        } catch (SQLException e) {
+            throw new RuntimeException("Error getting category id", e);
+        }
+    }
 }
