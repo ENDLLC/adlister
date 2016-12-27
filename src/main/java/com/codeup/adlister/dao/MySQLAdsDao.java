@@ -139,6 +139,7 @@ public class MySQLAdsDao implements Ads {
     public void deleteAd(Ad ad) {
         try {
             Statement statement = connection.createStatement();
+            statement.executeUpdate("DELETE FROM ads_categories WHERE ad_id = " + ad.getId());
             statement.executeUpdate("DELETE FROM ads WHERE ID = " + ad.getId());
         } catch (SQLException e) {
             throw new RuntimeException("Error deleting this ad.", e);
