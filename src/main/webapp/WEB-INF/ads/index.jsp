@@ -13,12 +13,11 @@
 <div class="container col-md-10 col-md-offset-1">
     <h1 class="text-center">Ads</h1>
     <c:forEach var="ad" items="${ads}">
-        <c:set var="shortDesc" value="${fn:substring(ad.description,0 ,10)}"/>
         <div class="col-md-2 container-fluid adDisplay">
-            <h4>${ad.getTitle()}</h4>
-            <p>${shortDesc}...</p>
+            <h4> <c:out value="${fn:substring(ad.title,0 , 5)}"/> ...</h4>
+            <p> <c:out value="${fn:substring(ad.description,0 ,10)}"/> ...</p>
             <p><a href="/ads/details?id=${ad.getId()}">Details</a></p>
-            <p>Contact seller at: ${AdsDao.getEmail(ad)}</p>
+            <p>Contact seller at: <c:out value="${AdsDao.getEmail(ad)}"/> </p>
         </div>
     </c:forEach>
 </div>

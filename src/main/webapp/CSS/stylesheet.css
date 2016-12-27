@@ -96,3 +96,7 @@
 .settingsTab {
     margin-left: 15%;
 }
+
+.textOverflow{
+    overflow: scroll;
+}

@@ -26,7 +26,7 @@
                     </c:when>
                     <c:otherwise>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">${sessionScope.user.username}<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <c:out value="${sessionScope.user.username}"/> <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="/profile">Profile</a></li>
                             <li class="divider"></li>
