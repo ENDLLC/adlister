@@ -44,7 +44,7 @@
 
             <form action="/search" method="get" class="navbar-form navbar-right" role="search">
                 <div class="form-group">
-                    <input name="search" id="search" class="searchBar form-control" type="text" placeholder="Search">
+                    <input name="search" id="search" class="searchBar form-control" type="text" placeholder="Search Ads">
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
