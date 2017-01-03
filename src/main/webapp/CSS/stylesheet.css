@@ -1,3 +1,6 @@
+#body{
+    width:100%;
+}
 .underscore {
     border-bottom: solid 2px #c1c1c1;
 }
@@ -110,13 +113,4 @@
 .footerMod{
     background-color: #ffffff;
     border-top: #c2c2c2 solid 1px;
-    box-shadow: 10px 10px 5px #fcfcfc;
-    height: 100px;
-}
-.categoryDropdownAdsIndex{
-    width: 50%;
-    margin: 0 auto;
-}
-.contentContainerAdsIndex{
-    width: 100%;
 }
