@@ -27,7 +27,26 @@
                     <label for="description">Description</label>
                     <textarea id="description" name="description" class="form-control" type="text"> <c:out value="${ad.getDescription()}"/> </textarea>
                 </div>
-                <a class="btn btn-info">Change image</a>
+
+
+                <div class="form-group btn-group">
+                    <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        Categories
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <c:forEach var="category"
+                                   items="${sessionScope.categories.getAdCategories(sessionScope.ad)}">
+                            <label href="/category?category=${category}"> <c:out value="${category}"/> </label>
+                            <input type="checkbox" name="category[]" id="${category}" value="${category}">
+                        </c:forEach>
+                    </ul>
+                </div>
+
+
+                <div>
+                    <a class="btn btn-info">Change image</a>
+                </div>
                 <input type="submit" class="btn btn-primary center-block pushDown">
             </form>
         </div>
