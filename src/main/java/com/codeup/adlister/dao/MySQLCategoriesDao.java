@@ -64,13 +64,15 @@ public class MySQLCategoriesDao implements Categories {
     @Override
     public void linkCategories(long id, String[] categories) {
         try {
+            Statement delStmt = connection.createStatement();
+            delStmt.executeUpdate("DELETE FROM ads_categories WHERE ad_id = " + id);
             String linkQuery = "INSERT INTO ads_categories(ad_id, category_id) " +
                     "VALUES (" + id + ", ?)";
-            PreparedStatement stmt = connection.prepareStatement(linkQuery);
+            PreparedStatement linkStmt = connection.prepareStatement(linkQuery);
             for (String category : categories
                     ) {
-                stmt.setString(1, String.valueOf(getCategoryId(category)));
-                stmt.execute();
+                linkStmt.setString(1, String.valueOf(getCategoryId(category)));
+                linkStmt.execute();
             }
         } catch (SQLException e) {
             throw new RuntimeException("Error attaching categories in database", e);
