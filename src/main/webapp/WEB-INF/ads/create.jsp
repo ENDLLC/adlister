@@ -20,13 +20,22 @@
                     <label for="description">Description</label>
                     <textarea id="description" name="description" class="form-control" type="text"></textarea>
                 </div>
-                <div class="form-group">
+                <div class="form-group btn-group">
+                    <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        Categories
+                        <span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu">
                     <c:forEach var="category" items="${sessionScope.categories}">
-                        <label for="${category}">${category}</label>
+                        <label for="${category}"> <c:out value="${category}"/> </label>
                         <input type="checkbox" name="category[]" id="${category}" value="${category}">
+                        <br>
                     </c:forEach>
+                    </div>
                 </div>
-                <a class="btn btn-info">Import image</a>
+                <div>
+                    <a class="btn btn-info">Import image</a>
+                </div>
                 <input type="submit" class="btn btn-primary center-block pushDown">
             </form>
         </div>
