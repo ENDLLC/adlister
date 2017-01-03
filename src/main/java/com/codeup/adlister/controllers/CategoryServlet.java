@@ -17,6 +17,7 @@ public class CategoryServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String category = request.getParameter("category");
         request.setAttribute("ads", DaoFactory.getAdsDao().getAdsByCategory(category));
+        request.setAttribute("AdsDao", DaoFactory.getAdsDao());
         request.getSession().setAttribute("categories", DaoFactory.getCategoriesDao().all());
         request.getRequestDispatcher("WEB-INF/ads/index.jsp").forward(request, response);
     }
