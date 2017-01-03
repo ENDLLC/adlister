@@ -21,7 +21,8 @@
 }
 
 .footerTextPadding{
-    padding-top: 3%;
+    margin-top: 3%;
+
 }
 
 .details{
@@ -105,5 +106,4 @@
 .emptySpace{
     margin: 5%;
 }
-
 

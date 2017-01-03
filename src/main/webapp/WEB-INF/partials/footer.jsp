@@ -1,7 +1,7 @@
-<div>
-
-</div>
-
-<div class="col-md-10 col-md-offset-1 footer footerstart navbar-header container">
-    <a class="navbar-brand" href="/"><img src="../../img/TechilisterLogo.png"></a>
+<div class="col-lg-12 footerTextPadding panel-footer text-center">
+    <a href="/"><img src="../../img/TechilisterLogo.png"></a><br>
+    <div class="description">Three Codeup students were given an assignment to create an Adlister site.
+        Hence, the creation of TECHIElister.
+    </div>
+    <h4>&#xA9;Techielister</h4>
 </div>
