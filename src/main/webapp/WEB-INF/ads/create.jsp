@@ -5,6 +5,11 @@
         <jsp:param name="title" value="Create a new Ad" />
     </jsp:include>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+
+    <script type="text/javascript">
+        filepicker.setKey("AlZM2UoY6Ryekp3hoUqpgz");
+        filepicker.pickAndStore(picker_options, store_options, onSuccess(Blob){}, onError(FPError){}, onProgress(FPProgress){});
+    </script>
 </head>
 <body>
     <div class="container col-md-10 col-md-offset-1">
@@ -19,7 +24,31 @@
                     <label for="description">Description</label>
                     <textarea id="description" name="description" class="form-control" type="text"></textarea>
                 </div>
+<<<<<<< Updated upstream
                 <a type="submit" class="btn btn-primary">Submit</a>
+=======
+                <input type="filepicker-dragdrop" data-fp-multiple="true"/>
+                <input type="hidden" name="filestackurl" id="filestackurl">
+                <input type="submit" class="btn btn-primary center-block pushDown">
+                filepicker.pickAndStore(
+                {
+                mimetype:"image/*",
+                multiple: true
+                },
+                {
+                location:"S3"
+                },
+                function(Blobs){
+                console.log(JSON.stringify(Blobs));
+                },
+                function(error){
+                //  console.log(JSON.stringify(error)); - print errors to console
+                },
+                function(progress){
+                console.log(JSON.stringify(progress));
+                }
+                );
+>>>>>>> Stashed changes
             </form>
         </div>
         <div class="col-md-offset-6">
