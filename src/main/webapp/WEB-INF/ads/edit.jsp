@@ -15,7 +15,7 @@
     <jsp:include page="../partials/navbar.jsp" />
 </head>
 <body>
-    <h2 class="text-center">Edit ad</h2>
+    <h1 class="text-center">Edit ad</h1>
     <div class="container col-md-10 col-md-offset-1">
         <div class="col-md-6 col-md-offset-3">
             <form action="/ads/edit" method="post">
