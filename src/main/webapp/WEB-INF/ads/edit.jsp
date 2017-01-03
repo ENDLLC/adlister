@@ -37,8 +37,9 @@
                     <ul class="dropdown-menu">
                         <c:forEach var="category"
                                    items="${sessionScope.categories}">
-                            <label href="/category?category=${category}"> <c:out value="${category}"/> </label>
                             <input type="checkbox" name="category[]" id="${category}" value="${category}">
+                            <label for="${category}" href="/category?category=${category}"> <c:out value="${category}"/> </label>
+                            <br>
                         </c:forEach>
                     </ul>
                 </div>
