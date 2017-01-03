@@ -10,12 +10,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand logo" href="/index.jsp"><i class="fa fa-desktop fa-2x" aria-hidden="true"></i></a>
+            <a class="navbar-brand logo" href="/"><img src="../../img/TechilisterLogo.png"></a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="/index.jsp">Home</a></li>
                 <li><a href="/ads">Ads</a></li>
             </ul>
 
@@ -27,7 +26,7 @@
                     </c:when>
                     <c:otherwise>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">${sessionScope.user.username}<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <c:out value="${sessionScope.user.username}"/> <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="/profile">Profile</a></li>
                             <li class="divider"></li>

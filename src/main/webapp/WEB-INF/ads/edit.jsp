@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Duke
@@ -14,32 +15,44 @@
     <jsp:include page="../partials/navbar.jsp" />
 </head>
 <body>
-<div class="container col-md-10 col-md-offset-1">
-    <div class="col-md-6">
-        <h1 class="text-center">Edit your ad</h1>
-        <form action="/ads/edit" method="post">
-            <div class="form-group">
-                <label for="title">Title</label>
-                <input id="title" name="title" class="form-control" type="text" value="${ad.getTitle()}">
-            </div>
-            <div class="form-group">
-                <label for="description">Description</label>
-                <textarea id="description" name="description" class="form-control"
-                      type="text">${ad.getDescription()}</textarea>
-            </div>
-            <a type="submit" class="btn btn-primary">Submit</a>
-        </form>
-    </div>
+    <h1 class="text-center">Edit ad</h1>
+    <div class="container col-md-10 col-md-offset-1">
+        <div class="col-md-6 col-md-offset-3">
+            <form action="/ads/edit" method="post">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input id="title" name="title" class="form-control" type="text" value="<c:out value="${ad.getTitle()}"/>">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" class="form-control" type="text"> <c:out value="${ad.getDescription()}"/> </textarea>
+                </div>
 
-    <div class="col-md-6">
-        <div class="box pushDown col-md-offset-4 col-md-offset-4">
-            <h4>Picture of ad</h4>
+
+                <div class="form-group btn-group">
+                    <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        Categories
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <c:forEach var="category"
+                                   items="${sessionScope.categories}">
+                            <input type="checkbox" name="category[]" id="${category}" value="${category}">
+                            <label for="${category}" href="/category?category=${category}"> <c:out value="${category}"/> </label>
+                            <br>
+                        </c:forEach>
+                    </ul>
+                </div>
+
+
+                <div>
+                    <a class="btn btn-info">Change image</a>
+                </div>
+                <input type="submit" class="btn btn-primary center-block pushDown">
+            </form>
         </div>
     </div>
-
-
-</div>
-<jsp:include page="../partials/footer.jsp"/>
-<jsp:include page="../partials/javascript.jsp"/>
+    <jsp:include page="../partials/footer.jsp"/>
+    <jsp:include page="../partials/javascript.jsp"/>
 </body>
 </html>

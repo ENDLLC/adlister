@@ -13,6 +13,7 @@ public class AdDetailServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int idToFind = Integer.parseInt(request.getParameter("id"));
         request.getSession().setAttribute("ad", DaoFactory.getAdsDao().getAdById(idToFind));
+        request.getSession().setAttribute("categories", DaoFactory.getCategoriesDao());
         request.getRequestDispatcher("/WEB-INF/ads/details.jsp").forward(request, response);
 
     }

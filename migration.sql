@@ -2,6 +2,8 @@ USE adlister_db;
 
 DROP TABLE IF EXISTS ads;
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS categories;
+DROP TABLE IF EXISTS ads_categories;
 
 CREATE TABLE users (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -20,3 +22,19 @@ CREATE TABLE ads (
     FOREIGN KEY (user_id) REFERENCES users(id)
         ON DELETE CASCADE
 );
+
+CREATE TABLE categories (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  category VARCHAR(50),
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE ads_categories (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  ad_id INT UNSIGNED NOT NULL,
+  category_id INT UNSIGNED NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (ad_id) REFERENCES ads (id),
+  FOREIGN KEY (category_id) REFERENCES categories (id)
+)
+

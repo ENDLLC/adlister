@@ -22,6 +22,7 @@ public class EditAdServlet extends HttpServlet {
         }
         if (ad.getUserId() == user.getId()) {
             request.getSession().setAttribute("ad", ad);
+            request.getSession().setAttribute("categories", DaoFactory.getCategoriesDao().all());
             request.getRequestDispatcher("/WEB-INF/ads/edit.jsp").forward(request, response);
         }
     }
@@ -33,6 +34,7 @@ public class EditAdServlet extends HttpServlet {
         ad.setTitle(title);
         ad.setDescription(description);
         DaoFactory.getAdsDao().updateAd(ad);
+        DaoFactory.getCategoriesDao().linkCategories(ad.getId(), request.getParameterValues("category[]"));
         response.sendRedirect("/ads");
     }
 }
