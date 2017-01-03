@@ -15,7 +15,7 @@
     <jsp:include page="../partials/navbar.jsp" />
 </head>
 <body>
-    <h2 class="text-center">Edit ad</h2>
+    <h1 class="text-center">Edit ad</h1>
     <div class="container col-md-10 col-md-offset-1">
         <div class="col-md-6 col-md-offset-3">
             <form action="/ads/edit" method="post">
@@ -37,8 +37,9 @@
                     <ul class="dropdown-menu">
                         <c:forEach var="category"
                                    items="${sessionScope.categories}">
-                            <label href="/category?category=${category}"> <c:out value="${category}"/> </label>
                             <input type="checkbox" name="category[]" id="${category}" value="${category}">
+                            <label for="${category}" href="/category?category=${category}"> <c:out value="${category}"/> </label>
+                            <br>
                         </c:forEach>
                     </ul>
                 </div>

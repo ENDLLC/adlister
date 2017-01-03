@@ -37,7 +37,7 @@
 
 .logo {
     position: relative;
-    top: -10px;
+    top: -5px;
 }
 
 .pushDown{
@@ -105,3 +105,5 @@
 .emptySpace{
     margin: 5%;
 }
+
+

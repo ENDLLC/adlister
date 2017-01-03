@@ -15,7 +15,7 @@
     <jsp:include page="partials/navbar.jsp" />
 </head>
 <body>
-<h3 class="text-center">Settings</h3>
+<h1 class="text-center">Settings</h1>
 <div class="col-md-4 col-md-offset-4">
     <ul class="nav nav-tabs settingsTab">
         <li class="active"><a href="#generalTab" data-toggle="tab" aria-expanded="false">General</a></li>

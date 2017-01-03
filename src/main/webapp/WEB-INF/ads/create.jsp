@@ -27,8 +27,8 @@
                     </a>
                     <div class="dropdown-menu">
                     <c:forEach var="category" items="${sessionScope.categories}">
-                        <label for="${category}"> <c:out value="${category}"/> </label>
                         <input type="checkbox" name="category[]" id="${category}" value="${category}">
+                        <label for="${category}"> <c:out value="${category}"/> </label>
                         <br>
                     </c:forEach>
                     </div>

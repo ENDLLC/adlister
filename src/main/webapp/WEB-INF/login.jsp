@@ -7,11 +7,11 @@
         <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     </head>
     <body>
+        <h1 class="text-center">Sign in</h1>
         <div class="container">
             <div class="col-md-6 col-md-offset-3">
                 <div class="col-md-12 container-fluid">
                     <form action="/login" method="POST" class="form-horizontal">
-                        <legend class="text-center">Sign In</legend>
                         <div class="form-group">
                             <div class="col-lg-10 col-md-offset-1">
                                 <input type="text" class="form-control" id="username" name="username" placeholder="Username">
