@@ -111,5 +111,12 @@
     background-color: #ffffff;
     border-top: #c2c2c2 solid 1px;
     box-shadow: 10px 10px 5px #fcfcfc;
+    height: 100px;
 }
-
+.categoryDropdownAdsIndex{
+    width: 50%;
+    margin: 0 auto;
+}
+.contentContainerAdsIndex{
+    width: 100%;
+}

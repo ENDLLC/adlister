@@ -11,7 +11,8 @@
 </head>
 <body>
 <h1 class="text-center">Ads</h1>
-<div class="container col-md-2 col-md-offset-5">
+<div class="col-md-10 col-md-offset-2 contentContainerAdsIndex">
+<div class="container categoryDropdownAdsIndex">
     <ul class="nav nav-tabs">
         <li class="active"><a href="/ads">All</a></li>
         <li class="dropdown">
@@ -26,6 +27,7 @@
             </ul>
         </li>
     </ul>
+</div>
 </div>
 <div class="container-fluid">
     <div class="row">

@@ -10,7 +10,7 @@
 <body>
     <div class="jumbotron text-center">
         <h1>Welcome to the TECHIElister!</h1>
-        <p>A techie's dream to sell, buy, and trade all things Techie!</p>
+        <p>A techie's dream to sell, buy, and trade all things TECHIE!</p>
     </div>
         <div class="column-header text-center">
             <h2>Featured Items</h2>
