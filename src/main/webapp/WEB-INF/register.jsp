@@ -7,9 +7,9 @@
     <jsp:include page="partials/navbar.jsp" />
 </head>
 <body>
+<h1 class="text-center">Register</h1>
 <form action="/register" method="post" class="form-horizontal col-md-6 col-md-offset-3">
     <fieldset>
-        <legend class="text-center">Register</legend>
         <div class="form-group">
             <label for="username" class="col-lg-2 control-label">Username</label>
             <div class="col-lg-10">
