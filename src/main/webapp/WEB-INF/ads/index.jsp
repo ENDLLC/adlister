@@ -10,15 +10,35 @@
 
 </head>
 <body>
-<div class="container col-md-10 col-md-offset-1">
-    <h1 class="text-center">Ads</h1>
+<h1 class="text-center">Ads</h1>
+<div class="container col-md-2 col-md-offset-5">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="/ads">All</a></li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Categories <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <c:forEach var="category" items="${sessionScope.categories}">
+                    <li><a href="/category?category=${category}">${category}</a></li>
+                    <li class="divider"></li>
+                </c:forEach>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <span class="emptySpace"></span>
+    </div>
+</div>
+<div class="container col-md-10 col-md-offset-1 adsContainer">
     <c:forEach var="ad" items="${ads}">
-        <c:set var="shortDesc" value="${fn:substring(ad.description,0 ,10)}"/>
         <div class="col-md-2 container-fluid adDisplay">
-            <h4>${ad.getTitle()}</h4>
-            <p>${shortDesc}...</p>
+            <h4> <c:out value="${fn:substring(ad.title,0 , 5)}"/> ...</h4>
+            <p> <c:out value="${fn:substring(ad.description,0 ,10)}"/> ...</p>
             <p><a href="/ads/details?id=${ad.getId()}">Details</a></p>
-            <p>Contact seller at: ${AdsDao.getEmail(ad)}</p>
+            <p>Contact seller at: <c:out value="${AdsDao.getEmail(ad)}"/> </p>
         </div>
     </c:forEach>
 </div>
